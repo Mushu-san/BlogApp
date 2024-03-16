@@ -24,7 +24,7 @@ export class ErrorInterceptor implements HttpInterceptor {
 
     return next.handle(request).pipe(
       finalize(() => {
-        this.blockUI.unblock();
+
       }),
       delay(100),
       catchError(async (httperror: HttpErrorResponse) => {
