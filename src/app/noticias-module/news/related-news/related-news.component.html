@@ -1,0 +1,16 @@
+<div class="row">
+  <h2 class="my-4">Noticias relacionadas</h2>
+  <div *ngFor="let item of relatedNews" class="col-sm-3">
+
+    <div class="card" style="width: 18rem;">
+      <img src="{{item.imagen}}" class="card-img-top" width="246" height="180">
+      <div class="card-body">
+        <h5 class="card-title">{{ item.titulo }}</h5>
+        <p class="card-text">{{ item.descripcion }}</p>
+        <ion-button routerLink="/news/detail/{{item.id}}" class="btn btn-primary" style="margin-bottom: 10px;">Ver mas</ion-button>
+      </div>
+    </div>
+
+  </div>
+</div>
+

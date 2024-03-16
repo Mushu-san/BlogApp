@@ -1,0 +1,74 @@
+<!-- <div class="container text-center mt-2">
+  <button style="align-self: flex-start;" type="button" class="btn btn-primary d-flex ">
+    <a [routerLink]="['/news']" class="text-white">Volver</a>
+  </button>
+  <div class="row justify-content-md-center">
+    <div class="col-sm-6 border mt-10">
+      <div class="card text-bg-dark">
+        <img src="{{new.imagen}}" class="card-img" height="300px">
+        <div class="card-img-overlay ">
+          <h2 class="card-title " style="background-color: rgb(152, 152, 152);">{{ new.titulo }}</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row my-2">
+    <div class="col-12">
+      <section>
+        <h1>{{ new.titulo }}</h1>
+        <p>{{ new.cuerpo }}</p>
+      </section>
+    </div>
+  </div>
+
+  <div class="row">
+    <app-related-news *ngIf="relatedNews" [relatedNews]="relatedNews"></app-related-news>
+  </div>
+</div> -->
+
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>{{new.titulo}} </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button [routerLink]="['/news']" style="align-self: flex-start;" type="button" class="btn btn-primary d-flex ">
+    Volver
+  </ion-button>
+
+  <ion-grid>
+    <ion-row>
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title><ion-img src="{{new.imagen}}" style="height: 500px; width: 800px;"></ion-img></ion-card-title>
+        </ion-card-header>
+      </ion-card>
+
+    </ion-row>
+
+    <ion-row>
+
+      <ion-col size="12">
+        <section>
+          <h1>{{ new.titulo }}</h1>
+          <p>{{ new.cuerpo }}</p>
+        </section>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <app-related-news *ngIf="relatedNews" [relatedNews]="relatedNews"></app-related-news>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+
+</ion-content>

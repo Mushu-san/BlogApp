@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Categorias </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="ion-justify-content-center">
+  <ion-grid [fixed]="true">
+    <ion-row *ngFor="let item of categories" class="ion-justify-content-start">
+      <ion-col size="6" no-padding>
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title><h1>{{ item.nombre }}</h1></ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <p>{{ item.descripcion }}</p>
+            <ion-button routerLink="/news/{{item.idCategoria}}">Ver Noticias</ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
